@@ -1,19 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
-
     <ItemGroup>
-        <Compile Include="Library.fs" />
+        <Compile Include="RoomWorkflows.fs" />
+        <Compile Include="Queries\RoomById.fs" />
     </ItemGroup>
-
     <ItemGroup>
       <ProjectReference Include="..\Hotel\Hotel.fsproj" />
     </ItemGroup>
-
     <ItemGroup>
       <PackageReference Include="FsToolkit.ErrorHandling" Version="2.0.0" />
     </ItemGroup>
-
 </Project>
