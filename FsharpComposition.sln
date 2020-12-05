@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Api", "Api\Api.fsproj", "{84D2EC9A-C947-4DEC-BD2B-58A9A85D5046}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hotel", "Hotel\Hotel.fsproj", "{A775E71E-4546-4204-9E82-5B8262F7416A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hotel.Application", "Hotel.Application\Hotel.Application.fsproj", "{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84D2EC9A-C947-4DEC-BD2B-58A9A85D5046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D2EC9A-C947-4DEC-BD2B-58A9A85D5046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D2EC9A-C947-4DEC-BD2B-58A9A85D5046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D2EC9A-C947-4DEC-BD2B-58A9A85D5046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A775E71E-4546-4204-9E82-5B8262F7416A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A775E71E-4546-4204-9E82-5B8262F7416A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A775E71E-4546-4204-9E82-5B8262F7416A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A775E71E-4546-4204-9E82-5B8262F7416A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
