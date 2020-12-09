@@ -2,18 +2,28 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Api", "Api\Api.fsproj", "{84D2EC9A-C947-4DEC-BD2B-58A9A85D5046}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hotel", "Hotel\Hotel.fsproj", "{A775E71E-4546-4204-9E82-5B8262F7416A}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hotel.Application", "Hotel.Application\Hotel.Application.fsproj", "{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Stock", "Stock\Stock.fsproj", "{A775E71E-4546-4204-9E82-5B8262F7416A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_infra", "_infra", "{C17148A6-A01F-49FB-B2A8-797059C8E339}"
 ProjectSection(SolutionItems) = preProject
 	README.md = README.md
 	docker-compose.yml = docker-compose.yml
-	docker-compose - Copy.sql = docker-compose - Copy.sql
+	database.sql = database.sql
 EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hotel.PostgresDao", "Hotel.PostgresDao\Hotel.PostgresDao.fsproj", "{9DE5858F-3D0D-4923-962C-67AB2B18DC13}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Stock.PostgresDao", "Stock.PostgresDao\Stock.PostgresDao.fsproj", "{9DE5858F-3D0D-4923-962C-67AB2B18DC13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A11824D7-478B-4EC2-9CC3-AFBB64A77643}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Intragration", "Intragration\Intragration.fsproj", "{E0FCB837-4E04-4537-A188-F8AE4FE5AF44}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Acceptance", "Acceptance\Acceptance.fsproj", "{C8A4FC6C-FC35-4801-AC51-7D824141BC1B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Unit", "Unit\Unit.fsproj", "{18034065-98B4-4B16-A669-6D4549E50308}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Toolbox", "Toolbox\Toolbox.fsproj", "{EF2FB0ED-290E-4B9A-9BA0-A18A123C67F3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Stock.Application", "Stock.Application\Stock.Application.fsproj", "{CDB03743-7A7F-4BDF-AFEC-2EC35BB428C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,13 +39,35 @@ Global
 		{A775E71E-4546-4204-9E82-5B8262F7416A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A775E71E-4546-4204-9E82-5B8262F7416A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A775E71E-4546-4204-9E82-5B8262F7416A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D487ECB1-8CA4-4CD9-9D55-EA71A424EC87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DE5858F-3D0D-4923-962C-67AB2B18DC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DE5858F-3D0D-4923-962C-67AB2B18DC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DE5858F-3D0D-4923-962C-67AB2B18DC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DE5858F-3D0D-4923-962C-67AB2B18DC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0FCB837-4E04-4537-A188-F8AE4FE5AF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0FCB837-4E04-4537-A188-F8AE4FE5AF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0FCB837-4E04-4537-A188-F8AE4FE5AF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0FCB837-4E04-4537-A188-F8AE4FE5AF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A4FC6C-FC35-4801-AC51-7D824141BC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A4FC6C-FC35-4801-AC51-7D824141BC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A4FC6C-FC35-4801-AC51-7D824141BC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A4FC6C-FC35-4801-AC51-7D824141BC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18034065-98B4-4B16-A669-6D4549E50308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18034065-98B4-4B16-A669-6D4549E50308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18034065-98B4-4B16-A669-6D4549E50308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18034065-98B4-4B16-A669-6D4549E50308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2FB0ED-290E-4B9A-9BA0-A18A123C67F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2FB0ED-290E-4B9A-9BA0-A18A123C67F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2FB0ED-290E-4B9A-9BA0-A18A123C67F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2FB0ED-290E-4B9A-9BA0-A18A123C67F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB03743-7A7F-4BDF-AFEC-2EC35BB428C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB03743-7A7F-4BDF-AFEC-2EC35BB428C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB03743-7A7F-4BDF-AFEC-2EC35BB428C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB03743-7A7F-4BDF-AFEC-2EC35BB428C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0FCB837-4E04-4537-A188-F8AE4FE5AF44} = {A11824D7-478B-4EC2-9CC3-AFBB64A77643}
+		{C8A4FC6C-FC35-4801-AC51-7D824141BC1B} = {A11824D7-478B-4EC2-9CC3-AFBB64A77643}
+		{18034065-98B4-4B16-A669-6D4549E50308} = {A11824D7-478B-4EC2-9CC3-AFBB64A77643}
+		{EF2FB0ED-290E-4B9A-9BA0-A18A123C67F3} = {A11824D7-478B-4EC2-9CC3-AFBB64A77643}
 	EndGlobalSection
 EndGlobal

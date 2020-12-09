@@ -13,20 +13,21 @@
   <ItemGroup>
     <Compile Include="IdGenerator.fs" />
     <Compile Include="Settings.fs" />
-    <Compile Include="NotTestableCompositionRoot.fs" />
+    <Compile Include="TigthTestableCompositionRoot.fs" />
     <Compile Include="Views.fs" />
+    <Compile Include="Dtos.fs" />
     <Compile Include="HttpHandler.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appsettings.json" />
-    <None Include="web.config" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="WebRoot\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hotel.Application\Hotel.Application.fsproj" />
-    <ProjectReference Include="..\Hotel.PostgresDao\Hotel.PostgresDao.fsproj" />
+    <ProjectReference Include="..\Stock.PostgresDao\Stock.PostgresDao.fsproj" />
   </ItemGroup>
 </Project>

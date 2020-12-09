@@ -1,19 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Hotel.PostgresDao</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Dapper" Version="2.0.35" />
+        <PackageReference Include="Npgsql" Version="5.0.0" />
         <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
         <PackageReference Include="FsToolkit.ErrorHandling" Version="2.0.0" />
+        <PackageReference Include="Thoth.Json.Net" Version="5.0.0" />
     </ItemGroup>
     <ItemGroup>
       <Compile Include="DapperFSharp.fs" />
-      <Compile Include="RoomQueryDao.fs" />
-      <Compile Include="RoomDao.fs" />
+      <Compile Include="StockItemDao.fs" />
+      <Compile Include="StockItemQueryDao.fs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Hotel.Application\Hotel.Application.fsproj" />
-      <ProjectReference Include="..\Hotel\Hotel.fsproj" />
+      <ProjectReference Include="..\Stock.Application\Stock.Application.fsproj" />
+      <ProjectReference Include="..\Stock\Stock.fsproj" />
     </ItemGroup>
 </Project>

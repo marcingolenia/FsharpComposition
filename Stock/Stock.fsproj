@@ -5,6 +5,6 @@
         <RootNamespace>Hotels</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="Room.fs" />
+        <Compile Include="StockItem.fs" />
     </ItemGroup>
 </Project>
