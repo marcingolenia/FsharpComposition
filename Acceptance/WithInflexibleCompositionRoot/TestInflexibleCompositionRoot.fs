@@ -1,7 +1,7 @@
-module TestCompositionRoot
+module TestInflexibleCompositionRoot
 
 open System
-open NotTestableCompositionRoot
+open InflexibleCompositionRoot
 open Settings
 let testSettings: Settings =
     // We are forced to test against database

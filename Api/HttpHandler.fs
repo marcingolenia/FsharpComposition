@@ -1,10 +1,10 @@
 namespace Api
 
 open Api.Dtos
+open FlexibleCompositionRoot
 open Stock.StockItem
 open Giraffe
 open Microsoft.AspNetCore.Http
-open NotTestableCompositionRoot
 open FSharp.Control.Tasks.V2.ContextInsensitive
 
 module HttpHandler =
@@ -38,7 +38,7 @@ module HttpHandler =
                 return! Successful.created (text "Created") next ctx
             }
 
-    let router (compositionRoot: TightCompositionRoot): HttpFunc -> HttpContext -> HttpFuncResult =
+    let router (compositionRoot: FlexibleCompositionRoot): HttpFunc -> HttpContext -> HttpFuncResult =
         choose [ GET >=> route "/" >=> htmlView Views.index
                  GET >=> routef "/stockitem/%d" (queryStockItemHandler compositionRoot.QueryStockItemBy)
                  PATCH >=> route "/stockitem/" >=> (removeFromStockItem compositionRoot.RemoveFromStock) 

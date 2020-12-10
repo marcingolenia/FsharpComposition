@@ -10,13 +10,14 @@ open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
 open Settings
-open NotTestableCompositionRoot
+open FlexibleCompositionRoot
+open InflexibleCompositionRoot
 
 let errorHandler (ex : Exception) (logger : ILogger) =
     logger.LogError(ex, "An unhandled exception has occurred while executing the request.")
     clearResponse >=> setStatusCode 500 >=> text ex.Message
            
-let configureApp (compositionRoot: TightCompositionRoot)
+let configureApp (compositionRoot: FlexibleCompositionRoot)
                  (app : IApplicationBuilder) =
     let env = app.ApplicationServices.GetService<IWebHostEnvironment>()
     (match env.EnvironmentName with
@@ -43,8 +44,9 @@ let main args =
     let contentRoot = Directory.GetCurrentDirectory()
     let webRoot     = Path.Combine(contentRoot, "WebRoot")
     let confBuilder = ConfigurationBuilder() |> configureSettings
-    let root        = compose (confBuilder.Build().Get<Settings>())
-    
+    //let root        = InflexibleCompositionRoot.compose (confBuilder.Build().Get<Settings>())
+    let trunk       = Trunk.compose (confBuilder.Build().Get<Settings>())
+    let root        = FlexibleCompositionRoot.compose trunk
     Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(
             fun webHostBuilder ->

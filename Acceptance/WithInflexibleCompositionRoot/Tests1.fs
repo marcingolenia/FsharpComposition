@@ -1,4 +1,4 @@
-module Tests
+module Tests1
 
 open System
 open Api
@@ -8,7 +8,7 @@ open Xunit
 open HttpContext
 open FSharp.Control.Tasks.V2
 open FsUnit.Xunit
-open TestCompositionRoot
+open TestInflexibleCompositionRoot
 
 [<Fact>]
 let ``GIVEN id of not existing stock item WHEN QueryStockItemBy THEN none is returned and mapped into 404 not found`` () =

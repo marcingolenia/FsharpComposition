@@ -5,8 +5,10 @@
         <GenerateProgramFile>false</GenerateProgramFile>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="TestCompositionRoot.fs" />
-        <Compile Include="Tests.fs" />
+        <Compile Include="WithInflexibleCompositionRoot\TestInflexibleCompositionRoot.fs" />
+        <Compile Include="WithInflexibleCompositionRoot\Tests1.fs" />
+        <Compile Include="WithFlexibleCompositionRoot\TestFlexibleCompositionRoot.fs" />
+        <Compile Include="WithFlexibleCompositionRoot\Tests2.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
     <ItemGroup>
