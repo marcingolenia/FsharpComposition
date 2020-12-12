@@ -15,14 +15,14 @@ module InflexibleCompositionRoot
   let compose settings =
     let createSqlConnection = DapperFSharp.createSqlConnection settings.SqlConnectionString
     let idGenerator = IdGenerator.create settings.IdGeneratorSettings
-    let roomIo: StockItemWorkflows.IO = {
+    let stockItemWorkflowsIo: StockItemWorkflows.IO = {
       ReadBy = StockItemDao.readBy createSqlConnection
       Update = StockItemDao.update createSqlConnection
       Insert = StockItemDao.insert createSqlConnection
     }
     {
-      QueryStockItemBy = RoomQueryDao.readBy createSqlConnection
-      RemoveFromStock = StockItemWorkflows.remove roomIo
-      CreateStockItem = StockItemWorkflows.create roomIo
+      QueryStockItemBy = StockItemQueryDao.readBy createSqlConnection
+      RemoveFromStock = StockItemWorkflows.remove stockItemWorkflowsIo
+      CreateStockItem = StockItemWorkflows.create stockItemWorkflowsIo
       GenerateId = idGenerator
     }

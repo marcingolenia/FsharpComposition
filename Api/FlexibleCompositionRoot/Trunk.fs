@@ -17,7 +17,7 @@ module Trunk =
         {
             GenerateId = IdGenerator.create settings.IdGeneratorSettings
             StockItemWorkflowDependencies = Leaves.StockItemWorkflowDependencies.compose createDbConnection
-            QueryStockItemBy = RoomQueryDao.readBy createDbConnection
+            QueryStockItemBy = StockItemQueryDao.readBy createDbConnection
             // Your next application layer workflow dependencies ...
         }
 

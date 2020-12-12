@@ -17,7 +17,6 @@ let testSettings: Settings =
 let composeRoot tree = compose tree
 let testTrunk = Trunk.compose testSettings
 
-// Here's how we can inject IO substitutes:
 let ``with StockItem -> ReadBy`` substitute (trunk: Trunk.Trunk) =
   { trunk with StockItemWorkflowDependencies = { trunk.StockItemWorkflowDependencies with ReadBy = substitute } }
   

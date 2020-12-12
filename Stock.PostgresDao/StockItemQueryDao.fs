@@ -2,7 +2,7 @@
 
 open DapperFSharp
 
-module RoomQueryDao =
+module StockItemQueryDao =
 
     let readBy createConnection (id: Queries.StockItemById.Query) =
         async {
