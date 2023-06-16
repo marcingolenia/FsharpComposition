@@ -8,7 +8,7 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="FakeItEasy" Version="7.4.0" />
-        <PackageReference Include="Giraffe" Version="5.0.0-rc-1" />
+        <PackageReference Include="Giraffe" Version="6.0.0" />
       <PackageReference Include="IdGen" Version="3.0.3" />
       <PackageReference Include="Microsoft.FSharpLu.Json" Version="0.11.7" />
       <PackageReference Include="Npgsql" Version="7.0.4" />
