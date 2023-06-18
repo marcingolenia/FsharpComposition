@@ -6,10 +6,9 @@
   </PropertyGroup>
   <ItemGroup>
 
-    <PackageReference Include="Giraffe" Version="5.0.0-rc-1" />
+    <PackageReference Include="Giraffe" Version="6.0.0" />
     <PackageReference Include="Giraffe.ViewEngine" Version="1.4.0" />
     <PackageReference Include="IdGen" Version="3.0.3" />
-    <PackageReference Include="TaskBuilder.fs" Version="2.1.*" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdGenerator.fs" />
