@@ -3,15 +3,15 @@ namespace Api
 open Api.Dtos
 open FlexibleCompositionRoot
 open Stock.StockItem
-open Giraffe
 open Microsoft.AspNetCore.Http
-open FSharp.Control.Tasks.V2.ContextInsensitive
+open FSharp.Control
+open Giraffe
 
 module HttpHandler =
     let queryStockItemHandler queryStockItemBy (id: int64): HttpHandler =
         fun (next: HttpFunc) (ctx: HttpContext) ->
             task {
-                let! stockItem = queryStockItemBy (id |> Queries.StockItemById.Query)
+                let! stockItem = queryStockItemBy (id |> Queries.StockItemById.Query) |> Async.StartAsTask
                 return! match stockItem with
                         | Some stockItem -> json stockItem next ctx
                         | None -> RequestErrors.notFound (text "Not Found") next ctx
@@ -33,8 +33,8 @@ module HttpHandler =
             let id = createId()
             task {
                 let! stockItemDto = ctx.BindJsonAsync<CreateStockItemDto>()
-                do! createStockItem id stockItemDto.Name stockItemDto.Amount
-                ctx.SetHttpHeader "Location" (sprintf "/stockitem/%d" id)
+                do! createStockItem id stockItemDto.Name stockItemDto.Amount |> Async.StartAsTask
+                ctx.SetHttpHeader("Location", (sprintf "/stockitem/%d" id))
                 return! Successful.created (text "Created") next ctx
             }
 

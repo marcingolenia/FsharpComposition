@@ -4,7 +4,6 @@ open System.Collections.Generic
 open System.Threading.Tasks
 open FakeItEasy
 open Giraffe
-open Giraffe.Serialization
 open Microsoft.AspNetCore.Http
 open System.IO
 open System.Text
@@ -23,8 +22,8 @@ let buildMockHttpContext () =
     A.CallTo(fun () -> context.RequestServices.GetService(typeof<INegotiationConfig>))
      .Returns(DefaultNegotiationConfig())
     |> ignore
-    A.CallTo(fun () -> context.RequestServices.GetService(typeof<IJsonSerializer>))
-     .Returns(NewtonsoftJsonSerializer(customSettings))
+    A.CallTo(fun () -> context.RequestServices.GetService(typeof<Json.ISerializer>))
+     .Returns(NewtonsoftJson.Serializer(customSettings))
     |> ignore
     A.CallTo(fun () -> context.Response.Headers).Returns(emptyHeaders)
     |> ignore

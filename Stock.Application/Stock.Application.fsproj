@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <RootNamespace>Stock.Application</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
@@ -8,7 +8,7 @@
         <Compile Include="Queries\StockItemById.fs" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="FsToolkit.ErrorHandling" Version="2.0.0" />
+      <PackageReference Include="FsToolkit.ErrorHandling" Version="4.6.0" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Stock\Stock.fsproj" />

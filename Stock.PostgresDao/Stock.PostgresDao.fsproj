@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <RootNamespace>Hotel.PostgresDao</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Dapper" Version="2.0.35" />
-        <PackageReference Include="Npgsql" Version="5.0.0" />
-        <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
-        <PackageReference Include="FsToolkit.ErrorHandling" Version="2.0.0" />
-        <PackageReference Include="Thoth.Json.Net" Version="5.0.0" />
+        <PackageReference Include="Dapper" Version="2.0.138" />
+        <PackageReference Include="Npgsql" Version="7.0.4" />
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+        <PackageReference Include="FsToolkit.ErrorHandling" Version="4.6.0" />
+        <PackageReference Include="Thoth.Json.Net" Version="11.0.0" />
     </ItemGroup>
     <ItemGroup>
       <Compile Include="DapperFSharp.fs" />
