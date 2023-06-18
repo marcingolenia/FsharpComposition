@@ -6,7 +6,7 @@ open Dtos
 open Microsoft.AspNetCore.Http
 open Xunit
 open HttpContext
-open FSharp.Control.Tasks.V2
+open FSharp.Control
 open FsUnit.Xunit
 open TestInflexibleCompositionRoot
 
@@ -23,7 +23,7 @@ let ``GIVEN id of not existing stock item WHEN QueryStockItemBy THEN none is ret
 [<Fact>]
 let ``GIVEN stock item was passed into request WHEN CreateStockItem THEN new stockitem is created and location is returned which can be used to fetch created stockitem`` () =
     // Arrange
-    let (name, amount) = (Guid.NewGuid().ToString(), Random().Next(1, 15))
+    let name, amount = (Guid.NewGuid().ToString(), Random().Next(1, 15))
     let httpContext = buildMockHttpContext ()
                       |> writeObjectToBody {Name = name; Amount = amount}
     // Act
@@ -34,7 +34,7 @@ let ``GIVEN stock item was passed into request WHEN CreateStockItem THEN new sto
         } |> Async.AwaitTask |> Async.RunSynchronously |> Option.get
     // Assert
     http.Response.StatusCode |> should equal StatusCodes.Status201Created
-    let createdId = http.Response.Headers.["Location"].ToString().[11..] |> Int64.Parse
+    let createdId = http.Response.Headers["Location"].ToString().[11..] |> Int64.Parse
     let httpContext4Query = buildMockHttpContext ()
     let httpAfterQuery =
         task {
